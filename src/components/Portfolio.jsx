@@ -73,18 +73,33 @@ function Portfolio() {
     {
       id: 9,
       logo: "/reactjs.png",
+      name: "all In App",
+      link: "https://github.com/Rehankhan8855/allReactPractice",
+      description: "Learning React concepts with Hands-on React.js projects for learning and improvement..",
+    },
+    {
+      id: 10,
+      logo: "/reactjs.png",
       name: "calculator",
       link: "https://github.com/Rehankhan8855/calculator",
       description:
         "Calculator app built with React for performing basic arithmetic operations.",
     },
     {
-      id: 10,
+      id: 11,
       logo: "/reactjs.png",
       name: "my1 portfolio",
       link: "https://github.com/Rehankhan8855/my1-portfolio",
       description: "Personal portfolio website showcasing projects and skills.",
     },
+    {
+      id: 12,
+      logo: "/reactjs.png",
+      name: "E-Commerce",
+      link: "https://github.com/Rehankhan8855/frontend",
+      description: "React.js-based e-commerce app with product listing, cart, and checkout functionality.",
+    },
+   
   ];
   const handelBtn = (link) => {
     window.open(link, "_blank");
