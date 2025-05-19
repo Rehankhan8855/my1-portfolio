@@ -31,6 +31,32 @@ function Experience() {
       logo: "/tailwindCss.png",
       name: "TailwindCSS",
     },
+     {
+      id: 6,
+      logo: "/node.png",
+      name: "nodeJS",
+    },
+     {
+      id: 7,
+      logo: "/express.png",
+      name: "expressJS",
+    },
+    {
+      id: 8,
+      logo: "/mongodb.jpg",
+      name: "mongoDB",
+    },
+    {
+      id: 9,
+      logo: "/shadcn.png",
+      name: "ShadCN UI",
+    },
+     {
+      id: 9,
+      logo: "/chakraui.jpg",
+      name: "Chakra UI",
+    },
+    
   ];
   return (
     <div
@@ -42,10 +68,7 @@ function Experience() {
           Skills
         </h1>
         <p className=" font-semibold text-center">
-          Completed 12 projects using HTML, CSS, and JavaScript,Gained hands-on
-          experience over the past 3-4 months by working on practical
-          projects,Developed a portfolio project using React.js and Tailwind
-          CSS, showcasing modern design principles and interactive features..
+         Completed 12 projects using HTML, CSS, and JavaScript, gained hands-on experience over the past 3–4 months by working on practical projects. Developed a portfolio project using React.js and Tailwind CSS, showcasing modern design principles and interactive features. Additionally, improved skills in Node.js, Express.js, MongoDB, ShadCN UI, and Chakra UI.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-y-0 gap-x-0 my-3 justify-items-center pt-6">
           {cardItem.map((item) => (

@@ -25,7 +25,7 @@ function About() {
               Bachelor of Computer Applications (BCA) - Kavayitri Bahinabai
               Chaudhari North Maharashtra University, Jalgaon, 2024
             </li>
-            <li> Full Stack Development Course - WAE Academy, 2024</li>
+            <li> Full Stack Development Course - WAE Academy, 2024-2025</li>
           </ul>
         </span>
         <br />
@@ -34,21 +34,22 @@ function About() {
         <h1 className="text-green-500 font-semibold text-xl">
           Professional Experience
         </h1>
-        <h2>Full Stack Developer (MERN) Trainee, WAE Academy (2024)</h2>
+        <h2>Full Stack Developer (MERN) Trainee, WAE Academy (2024-2025)</h2>
         <span>
           <ul className='list-disc pl-5 mt-2 space-y-2'>
             <li>
-              Worked on JavaScript and HTML/CSS concepts while learning the
-              basics of React.js.
-            </li>
-            <li>
-              Gained hands-on experience in the development and testing of new
-              features for web applications.
+              Gained hands-on experience in developing and testing features for dynamic web applications using React.js, Node.js, Express.js, and MongoDB.
             </li>
             <li>
               Achievements: Improved understanding of web development by working
               on multiple projects, gaining proficiency in optimizing code and
               debugging errors.
+            </li>
+              <li>
+              Gained experience in full-stack workflows and connecting frontend to backend via API calls.
+            </li>
+             <li>
+              Deployed projects using platforms like Vercel or Netlify, and managed backend using Render or Railway.
             </li>
           </ul>
         </span>
@@ -59,7 +60,7 @@ function About() {
         </h1>
         <span>
           <ul  className='list-disc pl-5 mt-2 space-y-2 '>
-            <li>My Mission: To become a skilled Full Stack Web Developer.</li>
+            <li>My Mission: To become a skilled Full Stack Developer.</li>
             <li>
               I Aim To: Develop innovative, user-friendly applications using my
               MERN Stack skills.
