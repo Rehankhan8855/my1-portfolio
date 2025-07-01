@@ -59,7 +59,7 @@ function Experience() {
     {
       id: 10,
       logo: "/prebuilt.svg",
-      name: "",
+      name: "Prebuilt UI",
     },
   ];
   return (
