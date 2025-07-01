@@ -31,12 +31,12 @@ function Experience() {
       logo: "/tailwindCss.png",
       name: "TailwindCSS",
     },
-     {
+    {
       id: 6,
       logo: "/node.png",
       name: "nodeJS",
     },
-     {
+    {
       id: 7,
       logo: "/express.png",
       name: "expressJS",
@@ -51,12 +51,16 @@ function Experience() {
       logo: "/shadcn.png",
       name: "ShadCN UI",
     },
-     {
+    {
       id: 9,
       logo: "/chakraui.jpg",
       name: "Chakra UI",
     },
-    
+    {
+      id: 10,
+      logo: "/prebuilt.svg",
+      name: "",
+    },
   ];
   return (
     <div
@@ -64,11 +68,17 @@ function Experience() {
       className="max-w-screen-2x1 container mx-auto px-4 md:px-50 my-16 "
     >
       <div>
-        <h1 className="text-3xl font-bold mb-5 flex justify-center">
-          Skills
-        </h1>
+        <h1 className="text-3xl font-bold mb-5 flex justify-center">Skills</h1>
         <p className=" font-semibold text-center">
-         Completed 12 projects using HTML, CSS, and JavaScript, gained hands-on experience over the past 3–4 months by working on practical projects. Developed a portfolio project using React.js and Tailwind CSS, showcasing modern design principles and interactive features. Additionally, improved skills in Node.js, Express.js, MongoDB, ShadCN UI, and Chakra UI.
+          Skills Completed 13+ projects using HTML, CSS, and JavaScript, gaining
+          hands-on experience over the past **6 months** by building real-world,
+          practical applications. Developed a modern and responsive portfolio
+          project using React.js and Tailwind CSS, showcasing interactive
+          features and clean UI design. Additionally, enhanced backend
+          development skills with Node.js, Express.js, and MongoDB, while also
+          building UI components with ShadCN UI,prebuiltui,Chakra UI. Gained
+          familiarity with real-time features using Socket.IO and focused on
+          writing clean, maintainable code across full-stack applications.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-y-0 gap-x-0 my-3 justify-items-center pt-6">
           {cardItem.map((item) => (

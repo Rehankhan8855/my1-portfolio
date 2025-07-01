@@ -43,10 +43,15 @@ function Home() {
               the MERN stack and a background in IT. I focus on creating
               visually appealing and efficient software solutions that leave a
               lasting impact. I hold a BCA degree from Kavayitri Bahinabai
-              Chaudhari North Maharashtra University, Jalgaon (2024), and have
+              Chaudhari North Maharashtra University, Jalgaon (2025), and have
               completed training in Full Stack Development from WAE Academy. My
               skills encompass HTML, CSS, JavaScript, Tailwind CSS, and a
-              growing proficiency in React.js, particularly with compon keep!
+              growing proficiency in React.js — particularly in building
+              reusable components and managing routes using React Router. I have
+              hands-on experience with Node.js, Express.js, and MongoDB, and I'm
+              familiar with Redux Toolkit, Git/GitHub, and creating RESTful
+              APIs. I also focus on building responsive user interfaces and have
+              explored tools like Firebase for authentication and data storage.
             </p>
             <br />
             {/**social media icons */}
@@ -64,7 +69,10 @@ function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/in/rehan-khan-13609031a" target="_blank">
+                    <a
+                      href="https://www.linkedin.com/in/rehan-khan-13609031a"
+                      target="_blank"
+                    >
                       <FaLinkedin className="text-2xl cursor-pointer" />
                     </a>
                   </li>

@@ -99,6 +99,13 @@ function Portfolio() {
       link: "https://github.com/Rehankhan8855/frontend",
       description: "React.js-based e-commerce app with product listing, cart, and checkout functionality.",
     },
+    {
+      id: 13,
+      logo: "/mern.webp",
+      name: "Social Media App",
+      link: "https://github.com/Rehankhan8855/socialNest",
+      description: "MERN Stack: Proficient in building full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Experienced in REST APIs, real-time data handling with Socket.IO, and frontend-backend integration"
+    },
    
   ];
   const handelBtn = (link) => {
