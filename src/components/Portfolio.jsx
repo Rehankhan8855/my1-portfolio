@@ -1,159 +1,174 @@
 import React from "react";
-// import mongoDB from "../../public/mongodb.jpg"
-// import expressJS from "../../public/express.png"
-// import reactJS from "../../public/reactjs.png"
-// import nodeJS from "../../public/node.png"
+import { motion } from "framer-motion";
+import { ExternalLink, Code2 } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+
 function Portfolio() {
   const cardItem = [
     {
+      id: 0,
+      logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+      name: "E-commerce Enterprise Dashboard",
+      link: "https://github.com/Rehankhan8855/dashboard1",
+      description: "A professional-grade Admin Dashboard for complex e-commerce operations. Features real-time Supabase integration, interactive Recharts analytics, and PDF invoice generation.",
+      tags: ["Next.js 15", "Supabase", "TypeScript", "Recharts"]
+    },
+    {
       id: 1,
-      logo: "/javascript.png", // Direct URL
-      name: "Task App",
-      link: "https://github.com/Rehankhan8855/task-app",
-      description:
-        "Simple Task Management App to efficiently organize and track daily tasks.",
+      logo: "/mern.webp",
+      name: "SocialNest",
+      link: "https://github.com/Rehankhan8855/socialNest",
+      description: "A full-featured social media platform with real-time messaging using Socket.io and MERN stack.",
+      tags: ["React", "Node.js", "Socket.io", "MongoDB"]
     },
     {
       id: 2,
-      logo: "/javascript.png", // Direct URL
-      name: "Tic Tac Toe",
-      link: "https://github.com/Rehankhan8855/tic-tac-toe",
-      description:
-        "Classic Tic-Tac-Toe game app for two players with an intuitive interface.",
+      logo: "/reactjs.png",
+      name: "College-Platform",
+      link: "https://github.com/lokesh-developer/college-platform",
+      description: "Built a high-performance, multi-role platform focusing on frontend development and Editorial UI/UX. Designed a custom design system inspired by a “literary salon” aesthetic with a refined, human-centric interface. Developed the complete frontend including a dynamic dashboard and event integration via APIs.",
+      tags: ["React", "Vite", "Supabase", "Redux Toolkit", "Framer Motion", "Tailwind CSS", "Radix UI"]
     },
     {
       id: 3,
-      logo: "/javascript.png",
-      name: "Dom Project",
-      link: "https://github.com/Rehankhan8855/dom-project",
-      description:
-        "DOM project to showcase dynamic content manipulation with JavaScript.",
+      logo: "/reactjs.png",
+      name: "HR Community – Landing Page",
+      link: "https://github.com/werengineer/hr-community",
+      description: "Contributed to the frontend development of a premium HR Community platform, focusing on building high-impact UI sections and interactive storytelling. Developed and refined key components including the Hero Section, Intro Section, and Tools Grid.",
+      tags: ["React 19", "TypeScript", "Vite", "Tailwind CSS", "Lucide React"]
     },
-
     {
-      id: 1,
-      logo: "/javascript.png", // Direct URL
-      name: "Wheather app",
-      link: "https://github.com/Rehankhan8855/wheather-app",
-      description:
-        "Weather App providing real-time weather updates for various locations.",
+      id: 4,
+      logo: "/reactjs.png",
+      name: "WAE Social Landing – Engineering Network",
+      link: "https://github.com/werengineer/social-landing",
+      description: "Modernized the UI/UX of the WAE Social landing page with a focus on clean, professional design and real-time functionality. Standardized typography using Inter for improved readability. Implemented a real-time newsletter system using Supabase.",
+      tags: ["React 19", "TypeScript", "Vite", "Supabase", "Tailwind CSS", "Radix UI", "Lucide React"]
     },
     {
       id: 5,
-      logo: "/javascript.png",
-      name: "Calculator",
-      link: "https://github.com/Rehankhan8855/calculator-app",
-      description:
-        "Simple Calculator App for performing basic arithmetic operations.",
+      logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+      name: "WAE Projects Landing – Automation & Services Showcase",
+      link: "https://github.com/werengineer/projects",
+      description: "Focused on the UI/UX modernization of a comprehensive services showcase platform. Developed high-end visual components using Next.js 14 and Framer Motion, including particle backgrounds, dynamic modals, and interactive service grids.",
+      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI", "Firebase", "Supabase"]
     },
     {
       id: 6,
-      logo: "/javascript.png",
-      name: "SPS Game",
-      link: "https://github.com/Rehankhan8855/Stone-Paper-Scissors_Game",
-      description:
-        "Classic Stone, Paper, Scissors game with an interactive user interface.",
+      logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+      name: "WAE Web – Core Platform & Workshop Hub",
+      link: "https://github.com/werengineer/web",
+      description: "Executed a comprehensive UI/UX overhaul of the WAE Web platform, focusing on high-performance data integration and modern design aesthetics. Engineered a dynamic workshop event system by fetching real-time data from Supabase.",
+      tags: ["Next.js 14", "Supabase", "Firebase", "GSAP", "Anime.js", "Framer Motion", "Tailwind CSS", "Lucide React"]
     },
     {
       id: 7,
-      logo: "/javascript.png",
-      name: "Clock",
-      link: "https://github.com/Rehankhan8855/clock-using-html-css-and-js",
-      description:
-        "Clock app built using HTML, CSS, and JavaScript to display real-time time.",
+      logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+      name: "GrowthPartner",
+      link: "https://github.com/lokesh-developer/career-growth-partner",
+      description: "Developed a premium career-mentorship landing page with a focus on Editorial UI/UX and interactive frontend. Enhanced user journey with optimized CTA logic and ensured full responsiveness across devices.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "Radix UI"]
     },
     {
       id: 8,
-      logo: "/javascript.png", // Direct URL
-      name: "Spotify Clone",
-      link: "https://github.com/Rehankhan8855/Spotify-Clone",
-      description:
-        "Spotify Clone app replicating Spotify's interface for music streaming and playlists.",
-    },
-    {
-      id: 9,
-      logo: "/reactjs.png",
-      name: "all In App",
-      link: "https://github.com/Rehankhan8855/allReactPractice",
-      description: "Learning React concepts with Hands-on React.js projects for learning and improvement..",
-    },
-    {
-      id: 10,
-      logo: "/reactjs.png",
-      name: "calculator",
-      link: "https://github.com/Rehankhan8855/calculator",
-      description:
-        "Calculator app built with React for performing basic arithmetic operations.",
-    },
-    {
-      id: 11,
-      logo: "/reactjs.png",
-      name: "my1 portfolio",
-      link: "https://github.com/Rehankhan8855/my1-portfolio",
-      description: "Personal portfolio website showcasing projects and skills.",
-    },
-    {
-      id: 12,
-      logo: "/reactjs.png",
-      name: "E-Commerce",
-      link: "https://github.com/Rehankhan8855/frontend",
-      description: "React.js-based e-commerce app with product listing, cart, and checkout functionality.",
-    },
-    {
-      id: 13,
-      logo: "/mern.webp",
-      name: "Social Media App",
-      link: "https://github.com/Rehankhan8855/socialNest",
-      description: "MERN Stack: Proficient in building full-stack web applications using MongoDB, Express.js, React.js, and Node.js. Experienced in REST APIs, real-time data handling with Socket.IO, and frontend-backend integration"
-    },
-   
+      logo: "https://cdn.worldvectorlogo.com/logos/next-js.svg",
+      name: "GrowatiApp",
+      link: "https://github.com/Growati/frontend_v1",
+      description: "Developed a comprehensive AI-driven creator platform with a scalable multi-page architecture. Built and structured 14+ internal pages, including free tools, comparison matrices, and legal sections.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP", "Radix UI", "TanStack Query"]
+    }
   ];
-  const handelBtn = (link) => {
-    window.open(link, "_blank");
-  };
 
   return (
-    <div
-      name="Portfolio"
-      className="max-w-screen-2x1 container mx-auto px-4 md:px-50 my-20 flex justify-center"
-    >
-      <div>
-        <h1 className="text-3xl font-bold mb-5 flex justify-center">
-          PortFolio
-        </h1>
-       
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-10 my-3 justify-items-center">          {cardItem.map((item) => (
-            <div
-              className="md:w-[300px] md:h-full border-[2px] rounded-lg shadow-lg p-4 cursor-pointer hover:scale-110 duration-300 flex flex-col items-center"
+    <section name="Portfolio" className="py-24 relative">
+      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="text-gradient">Projects</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+          <p className="text-slate-400 mt-6 max-w-2xl mx-auto">
+            A selection of my recent works where I solve real-world problems 
+            with code and creativity.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {cardItem.map((item, index) => (
+            <motion.div
               key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative glass-dark rounded-[2.5rem] overflow-hidden border border-slate-800/50 hover:border-indigo-500/30 transition-all duration-500"
             >
-              <img
-                src={item.logo}
-                className="w-[120px] h-[120px] p-6 rounded-full border-[2px] "
-                alt={item.name}
-              />
-              <div>
-                <div className="py-4 font-bold text-xl mb-2 flex justify-center">
-                  {item.name}
+              {/* Project Image/Icon Area */}
+              <div className="h-48 bg-slate-900/50 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <img
+                  src={item.logo}
+                  className="w-24 h-24 object-contain group-hover:scale-110 transition-transform duration-500"
+                  alt={item.name}
+                />
+                
+                {/* Overlay Links */}
+                <div className="absolute inset-0 bg-slate-950/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a 
+                    href={item.link} 
+                    target="_blank" 
+                    className="p-3 bg-white text-slate-950 rounded-full hover:scale-110 transition-transform shadow-xl"
+                    title="View Source"
+                  >
+                    <FaGithub size={20} />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="p-3 bg-indigo-600 text-white rounded-full hover:scale-110 transition-transform shadow-xl shadow-indigo-500/20"
+                    title="Live Demo"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
                 </div>
-                <p className="px-2 text-gray-700 flex flex-col items-center pb-4 text-center">
+              </div>
+
+              {/* Project Info */}
+              <div className="p-8 space-y-4">
+                <div className="flex justify-between items-center">
+                  <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                    {item.name}
+                  </h3>
+                  <Code2 size={18} className="text-slate-600" />
+                </div>
+                
+                <p className="text-slate-400 text-sm leading-relaxed line-clamp-3">
                   {item.description}
                 </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {item.tags.map((tag, i) => (
+                    <span 
+                      key={i} 
+                      className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="space-x-3 justify-around flex justify-center">
-                <button
-                  onClick={() => handelBtn(item.link)}
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded"
-                >
-                  Source code
-                </button>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default Portfolio;
+

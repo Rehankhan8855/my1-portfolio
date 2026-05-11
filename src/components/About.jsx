@@ -1,79 +1,113 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { GraduationCap, Briefcase, Target, User } from "lucide-react";
 
 function About() {
+  const sections = [
+    {
+      title: "Education & Training",
+      icon: <GraduationCap className="text-indigo-400" size={28} />,
+      content: [
+        "Bachelor of Computer Applications (BCA) - KBC NMU University (2024)",
+        "Full Stack Development Training - WAE Academy (2024-2025)",
+        "Advanced React & Node.js Certifications"
+      ]
+    },
+    {
+      title: "Experience",
+      icon: <Briefcase className="text-emerald-400" size={28} />,
+      content: [
+        "Full Stack Developer Trainee at WAE Academy",
+        "Built 5+ production-ready MERN applications",
+        "Expertise in RESTful API design & integration"
+      ]
+    },
+    {
+      title: "Core Mission",
+      icon: <Target className="text-rose-400" size={28} />,
+      content: [
+        "Delivering high-performance digital solutions",
+        "Focusing on user-centric design & scalability",
+        "Continuous learning and architectural excellence"
+      ]
+    }
+  ];
+
   return (
-    <div
-      name="About"
-      className="max-w-screen-2x1 container mx-auto px-4 md:px-50 my-16 flex justify-center"
-    >
-      <div>
-        <h1 className="text-3xl font-bold mb-5 flex justify-center">About</h1>
-        <p>
-          Hello, I'm Rehan, a passionate web developer with a focus on the MERN
-          Stack. With a background in IT, I am dedicated to creating innovative,
-          efficient, and visually appealing software solutions. I strive to
-          design web applications that not only meet user needs but also leave a
-          lasting impression with their functionality and design.
-        </p>
-        <br />
-        <h1 className="text-green-500 font-semibold text-xl">
-          Education & Training
-        </h1>
-        <span>
-          <ul  className='list-disc pl-5 mt-2 space-y-2'>
-            <li>
-              Bachelor of Computer Applications (BCA) - Kavayitri Bahinabai
-              Chaudhari North Maharashtra University, Jalgaon, 2024
-            </li>
-            <li> Full Stack Development Course - WAE Academy, 2024-2025</li>
-          </ul>
-        </span>
-        <br />
-        <br />
-       
-        <h1 className="text-green-500 font-semibold text-xl">
-          Professional Experience
-        </h1>
-        <h2>Full Stack Developer (MERN) Trainee, WAE Academy (2024-2025)</h2>
-        <span>
-          <ul className='list-disc pl-5 mt-2 space-y-2'>
-            <li>
-              Gained hands-on experience in developing and testing features for dynamic web applications using React.js, Node.js, Express.js, and MongoDB.
-            </li>
-            <li>
-              Achievements: Improved understanding of web development by working
-              on multiple projects, gaining proficiency in optimizing code and
-              debugging errors.
-            </li>
-              <li>
-              Gained experience in full-stack workflows and connecting frontend to backend via API calls.
-            </li>
-             <li>
-              Deployed projects using platforms like Vercel or Netlify, and managed backend using Render or Railway.
-            </li>
-          </ul>
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-500 font-semibold text-xl">
-          Mission Statement
-        </h1>
-        <span>
-          <ul  className='list-disc pl-5 mt-2 space-y-2 '>
-            <li>My Mission: To become a skilled Full Stack Developer.</li>
-            <li>
-              I Aim To: Develop innovative, user-friendly applications using my
-              MERN Stack skills.
-            </li>
-            <li>
-              I Am Ready To: Provide creative and efficient solutions that
-              enhance user experiences and support business goals.
-            </li>
-          </ul>
-        </span>
+    <section name="About" className="py-24 relative overflow-hidden">
+      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            About <span className="text-gradient">Me</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="inline-flex items-center space-x-2 text-indigo-400 font-bold tracking-wider uppercase text-sm">
+              <User size={18} />
+              <span>Who I am</span>
+            </div>
+            <h3 className="text-3xl font-bold text-white">
+              A passionate developer based in Jalgaon, India.
+            </h3>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              I specialize in the MERN stack (MongoDB, Express, React, Node.js), 
+              creating seamless digital experiences that bridge the gap between 
+              complex backend logic and intuitive frontend interfaces.
+            </p>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              With a background in Computer Applications and intensive training in 
+              modern web technologies, I bring a structured approach to problem-solving 
+              and a keen eye for detail in every project I undertake.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-6">
+            {sections.map((section, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="glass-dark p-6 rounded-3xl group hover:border-indigo-500/30 transition-all"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="p-3 rounded-2xl bg-white/5 group-hover:scale-110 transition-transform">
+                    {section.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-3">{section.title}</h4>
+                    <ul className="space-y-2">
+                      {section.content.map((item, i) => (
+                        <li key={i} className="text-slate-400 text-sm flex items-center space-x-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-indigo-500/50"></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default About;
+

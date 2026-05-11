@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
+import { Send, Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 
 function Contact() {
   const {
@@ -10,98 +12,146 @@ function Contact() {
     formState: { errors },
     reset
   } = useForm();
-  const [isLoading, setIsLoading] = useState(false); // loading state
+  const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
-    setIsLoading(true); // loading start
-    const userInfo = {
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    };
+    setIsLoading(true);
     try {
-      await axios.post("https://getform.io/f/bdrrnnkb", userInfo);
-      toast.success("Your message has been sent");
-      reset()
+      await axios.post("https://getform.io/f/bdrrnnkb", data);
+      toast.success("Message sent successfully!");
+      reset();
     } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
+      toast.error("Failed to send message. Please try again.");
     } finally {
-      setIsLoading(false); // loading end
+      setIsLoading(false);
     }
   };
 
+  const contactInfo = [
+    { icon: <Mail size={20} />, label: "Email", value: "rehankhan@example.com" },
+    { icon: <Phone size={20} />, label: "Phone", value: "+91 1234567890" },
+    { icon: <MapPin size={20} />, label: "Location", value: "Jalgaon, India" },
+  ];
+
   return (
-    <>
-      <div
-        name="Contact"
-        className="max-w-screen-2x1 container mx-auto px-4 md:px20 my-16"
-      >
-        <h1 className="text-3xl font-bold mb-4 flex justify-center items-center">
-          Contact me
-        </h1>
-        <span className="flex justify-center items-center">
-          Please fill out the form below to contact me
-        </span>
-        <div className="flex flex-col items-center justify-center mt-5">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="bg-slate-200 w-96 px-8 py-6 rounded-xl"
+    <section name="Contact" className="py-24 relative overflow-hidden">
+      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Get in <span className="text-gradient">Touch</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-indigo-600 mx-auto rounded-full"></div>
+          <p className="text-slate-400 mt-6 max-w-2xl mx-auto">
+            Have a project in mind or just want to say hi? Feel free to reach out. 
+            I'm always open to discussing new opportunities.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-3 gap-12">
+          {/* Contact Info Sidebar */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8"
           >
-            <h1 className="text-xl font-semibold mb-4">Send Your Message</h1>
-
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Full Name</label>
-              <input
-                {...register("name", { required: true })}
-                className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Enter your Fullname"
-              />
-              {errors.name && <span>This field is required</span>}
+            <div className="glass-dark p-8 rounded-[2.5rem] space-y-8">
+              <h3 className="text-2xl font-bold text-white flex items-center gap-3">
+                <MessageSquare className="text-indigo-400" />
+                Contact Info
+              </h3>
+              <div className="space-y-6">
+                {contactInfo.map((info, idx) => (
+                  <div key={idx} className="flex items-start gap-4 group">
+                    <div className="p-3 rounded-2xl bg-indigo-500/10 text-indigo-400 group-hover:scale-110 transition-transform">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{info.label}</p>
+                      <p className="text-slate-200 font-medium">{info.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
+          </motion.div>
 
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Email Address</label>
-              <input
-                {...register("email", { required: true })}
-                className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Enter your email address"
-              />
-              {errors.email && <span>This field is required</span>}
-            </div>
+          {/* Contact Form */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
+          >
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="glass-dark p-8 md:p-12 rounded-[2.5rem] space-y-6"
+            >
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-400 ml-1">Full Name</label>
+                  <input
+                    {...register("name", { required: "Name is required" })}
+                    className={`w-full bg-slate-950/50 border ${errors.name ? 'border-rose-500/50' : 'border-slate-800'} rounded-2xl px-5 py-4 text-slate-200 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all`}
+                    placeholder="John Doe"
+                  />
+                  {errors.name && <span className="text-xs text-rose-500 ml-1">{errors.name.message}</span>}
+                </div>
 
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Message</label>
-              <textarea
-                {...register("message", { required: true })}
-                className="shadow rounded-lg appearance-none border py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="message"
-                name="message"
-                placeholder="Enter your Query"
-              />
-              {errors.message && <span>This field is required</span>}
-            </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-400 ml-1">Email Address</label>
+                  <input
+                    {...register("email", { 
+                      required: "Email is required",
+                      pattern: { value: /^\S+@\S+$/i, message: "Invalid email" }
+                    })}
+                    className={`w-full bg-slate-950/50 border ${errors.email ? 'border-rose-500/50' : 'border-slate-800'} rounded-2xl px-5 py-4 text-slate-200 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all`}
+                    placeholder="john@example.com"
+                  />
+                  {errors.email && <span className="text-xs text-rose-500 ml-1">{errors.email.message}</span>}
+                </div>
+              </div>
 
-            <div className="flex justify-center">
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-slate-400 ml-1">Message</label>
+                <textarea
+                  rows="5"
+                  {...register("message", { required: "Message is required" })}
+                  className={`w-full bg-slate-950/50 border ${errors.message ? 'border-rose-500/50' : 'border-slate-800'} rounded-2xl px-5 py-4 text-slate-200 focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-all resize-none`}
+                  placeholder="Tell me about your project..."
+                />
+                {errors.message && <span className="text-xs text-rose-500 ml-1">{errors.message.message}</span>}
+              </div>
+
               <button
                 type="submit"
-                className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300 flex-center"
-                disabled={isLoading} // loading ke doran button disable rahega
+                disabled={isLoading}
+                className="w-full md:w-auto flex items-center justify-center space-x-2 bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-600/50 text-white px-10 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-indigo-500/25 active:scale-95"
               >
-                {isLoading ? "Sending..." : "Send"}
+                {isLoading ? (
+                  <span className="flex items-center gap-2">
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    Sending...
+                  </span>
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <Send size={18} />
+                  </>
+                )}
               </button>
-            </div>
-          </form>
+            </form>
+          </motion.div>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
 export default Contact;
+
